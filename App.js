@@ -5,10 +5,17 @@ import LoginScreen from './app/screens/login';
 import AboutScreen from './app/screens/about';
 import MainScreen from './app/screens/main';
 import ActionsScreen from './app/screens/actions';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; 
+import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
+import store from './app/redux/store.js';
 
 const RootStack = StackNavigator({
     Login: {
-        screen: LoginScreen
+        screen: LoginScreen,       
+        navigationOptions: {
+            header: null
+        }   
     },
     About: {
         screen: AboutScreen,
@@ -26,21 +33,20 @@ const RootStack = StackNavigator({
     },
     Main: {
         screen: MainScreen,
-        navigationOptions: {            
+        navigationOptions:  ({navigation}) => ({               
             title: '<epamer>',            
             headerTintColor: 'white',
             headerStyle: {
                 backgroundColor: 'black'
             },
             headerTitleStyle: { 
-                paddingLeft: 140
-            }       
-        },
+                paddingLeft: 80
+            },
+            headerRight: <Icon style={{paddingRight: 20}} name="account" size={30} color="white"  onPress={() =>  navigation.navigate('Actions')} />
+        }),
     },
     Actions: {
-        screen: ActionsScreen,
-        headerMode: 'none',
-        header: null,
+        screen: ActionsScreen,       
         navigationOptions: {
             header: null
         }    
@@ -52,6 +58,9 @@ const RootStack = StackNavigator({
   
 export default class App extends React.Component {
     render() {
-        return <RootStack />;
+        return (
+            <Provider store={store}>
+                <RootStack />
+            </Provider>);
     }
 }

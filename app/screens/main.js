@@ -23,6 +23,7 @@ export class MainScreen extends React.Component {
     }
 
     render() {
+        console.log(this.props,"props ==============")
       return (
         <View style={{ 
             flex: 1, 
