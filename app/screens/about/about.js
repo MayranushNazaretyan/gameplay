@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, Button, AsyncStorage } from 'react-native';
+import {styles} from "./aboutStyles";
 
-export class AboutScreen extends React.Component {
+class AboutScreen extends React.Component {
     render() {
       return (
         <View style={{ 

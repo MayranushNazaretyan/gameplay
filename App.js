@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import LoginScreen from './app/screens/login';
-import AboutScreen from './app/screens/about';
-import MainScreen from './app/screens/main';
-import ActionsScreen from './app/screens/actions';
+import LoginScreen from './app/screens/login/login';
+import AboutScreen from './app/screens/about/about';
+import MainScreen from './app/screens/main/main';
+import ActionsScreen from './app/screens/actions/actions';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; 
 import { Provider } from 'react-redux';
 import { connect } from 'react-redux';

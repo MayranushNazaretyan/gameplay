@@ -1,7 +1,7 @@
 import ActionTypes from "../actionTypes";
 import {handleActions} from "redux-actions";
 
-export const defaultState = {
+const defaultState = {
     name: ""
 };
 
