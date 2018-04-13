@@ -4,31 +4,20 @@ import { Home, Work, Asmt, Soft, Hard, Docs, Close } from '../../../assets/image
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {connect} from "react-redux";
 import {loginActions} from "../../redux/actions/index";
-import {styles} from "./actionsStyles";
+import {styles} from "./styles";
 
 class ActionsScreen extends React.Component {
     render() {
         const { goBack } = this.props.navigation;
         return (
-            <View style={{
-                flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: 25,
-                backgroundColor: '#666666'}}>
+            <View style={styles.actions_page}>
                 <View style={styles.close_container}>
                     <View style={styles.close}>
-                        <Icon name="close" size={30} color="white"  onPress={() =>  goBack()} />
+                        <Icon name="close" size={30} color="white"  onPress={goBack} />
                     </View>
                 </View>
-                <Text style={{
-                    fontSize: 28,
-                    fontFamily: 'sourcesanspro-bold',
-                    color: 'white', }}>{"<Username>"}</Text>
-                <Text style={{
-                    fontSize: 28,
-                    fontFamily: 'sourcesanspro-bold',
-                    color: '#39C2D7', }}>Junior software engineer</Text>
+                <Text style={styles.username}>{"<Username>"}</Text>
+                <Text style={styles.position}>Junior software engineer</Text>
                 <View style={styles.actions_container}>
                     {this.props.actions.map((item,index) => {
                         return(

@@ -1,1 +1,1 @@
-export {loginActions} from "./loginActions";
+export * as loginActions from "./loginActions";

@@ -1,6 +1,13 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
+    actions_page: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 25,
+        backgroundColor: '#666666'
+    },
     close_container: {
         width: '100%',
         height: 100,
@@ -16,6 +23,16 @@ export const styles = StyleSheet.create({
         borderRadius: 50,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    username: {
+        fontSize: 28,
+        fontFamily: 'sourcesanspro-bold',
+        color: 'white'
+    },
+    position: {
+        fontSize: 28,
+        fontFamily: 'sourcesanspro-bold',
+        color: '#39C2D7'
     },
     actions_container: {
         width: 500,

@@ -3,23 +3,23 @@ import { View, Text, Image, TouchableHighlight, StyleSheet, TextInput, AsyncStor
 import { Logo } from '../../../assets/images/index';
 import {connect} from "react-redux";
 import {loginActions} from "../../redux/actions/index";
-import {styles} from "./loginStyles";
+import {styles} from "./styles";
 
 class LoginScreen extends React.Component {
 
-    afterLogin() {
+    afterLogin = () => {
+        this.props.login();
         this.props.navigation.navigate('Main');
-    }
+    };
 
-    saveUsername(name) {
+    saveUsername = (name) => {
         AsyncStorage.setItem('username', name);
-    }
+    };
 
     render() {
       return (
-        <View             
-            style={styles.container}>
-            <View  style={styles.logoContainer}>
+        <View style={styles.container}>
+            <View style={styles.logoContainer}>
                 <Image
                     style={styles.logo}
                     source={Logo}
@@ -32,7 +32,7 @@ class LoginScreen extends React.Component {
                         placeholderTextColor= '#CCCCCC'
                         placeholder= 'Username'
                         underlineColorAndroid='transparent'
-                        onChangeText={(text) => this.saveUsername(text)}
+                        onChangeText={this.saveUsername}
                     />
                 </View>
                 <View  style={styles.inputContainer}>
@@ -48,7 +48,7 @@ class LoginScreen extends React.Component {
                 <TouchableHighlight
                     activeOpacity= {1}
                     style={styles.buttonContainer}
-                    onPress={() => this.afterLogin()}
+                    onPress={this.afterLogin}
                     underlayColor="#7F993A">
                     <Text style={styles.button}>
                         {("login").toUpperCase()}
